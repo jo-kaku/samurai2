@@ -1,0 +1,40 @@
+package com.example.samuraitravel.contoroller;
+
+
+import org.springframework.data.web.PageableDefault;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.samuraitravel.repository.HouseRepository;
+import com.example.samuraitravel.repository.ReviewRepository;
+import com.example.samuraitravel.service.ReviewService;
+
+@Controller
+@RequestMapping("/houses/{houseId}/reviews")
+public class ReviewController {
+	private final ReviewRepository reviewRepository;
+	private final HouseRepository houseRepository;
+	private final ReviewService reviewService;
+
+
+	public ReviewController {ReviewRepository reviewRepository, HouseRepositoty houseRepository, ReviewService reviewService} {
+		this.reviewRepository = reviewRepository;
+		this.houseRepository = houseRepository;
+		this.reviewService = reviewService;
+	}
+
+	@GetMapping
+	public String index(@PathVariable(name = "houseId"))  Integer houseId, @PageableDefault(page = 0, size = 10, soft = "id") Pageable pageable, Model model){
+		House house = houseRepository.getReferenceById(houseId);
+		Page<Review> reviewPage = reviewRepository.findByHouseOrderByCreatedAtDesc(house, pageable);
+		
+		model.addAttribute(attributeName:"house", house);
+		model.addAttribute(attributeName:"reviewPage", new ReviewPage());
+			
+		return "reviews/index"
+	}
+	
+	@GetMapping("/register")
+	public String register(@PathVariable)

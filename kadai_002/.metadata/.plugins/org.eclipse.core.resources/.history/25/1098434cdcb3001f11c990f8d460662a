@@ -1,0 +1,21 @@
+package com.example.samuraitravel.contoroller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class ReviewContoroller {
+	private final ReviewRepository reviewRepository;
+	private final HouseRepository houseRepository;
+	private final UserRepository userRepository;
+	private final ReviewService reviewService;
+}
+
+	public ReviewContoroller {
+		this.reviewRepository = reviewRepository;
+		this.houseRepository = houseRepository;
+		this.userRepository = userRepository;
+		this.reviewService = reviewService;
+	}
+
+	@GetMapping("/reviews")

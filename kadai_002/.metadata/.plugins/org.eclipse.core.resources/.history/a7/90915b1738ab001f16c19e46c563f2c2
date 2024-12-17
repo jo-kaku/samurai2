@@ -1,0 +1,40 @@
+package com.example.samuraitravel.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import com.example.samuraitravel.entity.Review;
+import com.example.samuraitravel.repository.ReviewRepository;
+
+
+@Service
+public class ReviewService {
+	private final ReviewRepository reviewRepository;
+	
+	@Autowired
+	public ReviewService(ReviewRepository reviewRepository) {
+		this.reviewRepository = reviewRepository;
+	}
+	
+	//ページネーション
+	public Page<Review> getReviewsByHouseId(int houseId, int page){
+		Pageable pageable = PageRequest.of(page,10);
+		return reviewRepository.findByHouseId(houseId, pageable);
+	}
+	
+	public Review createReview(Review review) {
+		review.setName(reviewRegisterForm.getName());
+		review.setRating(reviewRegisterForm.getRating());
+		review.setCreatedAt(reviewRegisterForm.getCreatedAt());
+		review.setUpdatedAt(reviewRegisterForm.getUpdatedAt());
+		review.setComment(reviewRegisterForm.getComment());
+		
+		return reviewRepository.save.(review);
+	}
+		
+		
+	
+}
