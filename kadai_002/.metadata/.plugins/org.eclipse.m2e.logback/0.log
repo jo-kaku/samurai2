@@ -268,3 +268,6 @@
 2024-12-15 16:35:33,827 [Worker-297: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
 2024-12-15 16:35:33,833 [Worker-297: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 41 resources from src/main/resources to target/classes
 2024-12-15 16:35:33,837 [Worker-297: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /Applications/Eclipse_2023-12.app/Contents/kadai_002/kadai_002/samuraitravel/src/test/resources
+2024-12-17 23:35:20,920 [Worker-347: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2024-12-17 23:35:20,937 [Worker-347: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2024-12-17 23:35:20,942 [Worker-347: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /Applications/Eclipse_2023-12.app/Contents/kadai_002/kadai_002/samuraitravel/src/test/resources
